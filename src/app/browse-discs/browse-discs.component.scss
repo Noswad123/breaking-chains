@@ -1,0 +1,87 @@
+
+//@import url(/sass/style);
+$primary-color: #18121e;
+$secondary-color: #233237;
+$tertiary-color: #984b43;
+$font-color1:#eac67a;
+$font-color2: #984b43;
+
+
+body{
+    background-color: $secondary-color;
+    color:$font-color1
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;   
+    
+    background-color: $primary-color;
+    h2{
+        color:$font-color1;
+
+    
+}
+    .discs{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin-left: 1em;
+            
+            
+                div{
+                    display: flex;
+                    
+                    justify-content: center;
+                    
+                    margin: .25em;
+                   padding:0;
+                    min-height: 2em;
+                    width: 6rem;
+                   
+                    
+                    background: $secondary-color;
+                    color: $font-color1;
+                    font-size: 1rem; 
+                    .selected{
+
+                        background-color: $secondary-color;
+                        color:$font-color1;
+                    }
+                    span{
+                        align-self: center;
+                    }
+            
+            
+            
+        }
+        :hover{
+            background-color: $tertiary-color;
+            color:$font-color1;
+            }
+            .selected{
+                     background-color: $tertiary-color;
+                     color:$font-color1;
+             }
+    }
+
+    .featuredDisc{
+        text-align: center;
+        margin-top: 1em;
+        h2{
+            color:$font-color1;
+    
+    }
+        background: $secondary-color;
+        ul{
+            list-style-type: none;
+         
+            li{
+                 text-decoration: none;
+            }
+        }
+    }
+    
+}

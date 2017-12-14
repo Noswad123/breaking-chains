@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Register</h2>
+
+  <form #form="ngForm" (ngSubmit)="postUser(form.value)">
+    <ul>
+      <li>First Name
+        <input id="firstname" type="text" ng-model="firstName" value="First Name" name="firstName" ngModel>
+      </li>
+      <li>Last Name
+        <input id="lastname" type="text" value="Last Name" name="lastName" ngModel>
+      </li>
+      <li>Email
+        <input id="email" type="text" value="email" name="email" ngModel>
+      </li>
+      <li>Password
+        <input id="passText" type="text" value="password" name="password" ngModel>
+      </li>
+    </ul>
+    <button type="submit">Submit</button>   <button (click)="cancel()">Cancel</button>
+  </form>
+
+
+</div>

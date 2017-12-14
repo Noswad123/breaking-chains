@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>{{course.name}}<button (click)="viewCourses()">Change Course</button> </h2>  
+    <div id="courses">
+        <ul>
+    <li  class="courseName" *ngFor="let course of courses" (click)="onCourse(course)" [class.selected]="course=== toChange">
+       {{course.name}}</li>
+
+     </ul>
+    </div>
+    <div class="selectedList">
+  <ul>
+     
+     
+     
+     <li  class="name" *ngFor="let player of selectedPlayers" (click)="onRemoval(player)" [class.remove]="player=== toBeRemoved">
+        {{player.userName}}</li>
+
+      </ul>
+        
+    </div>
+        <h2>Add a Player</h2>
+        <ul> 
+        
+     <li> <input type="text" value="guest" [(ngModel)]="guest"><button (click)="addGuest()" >add guest</button></li>
+     
+       <li class="name"*ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player=== selectedPlayer">
+          {{player.userName}}</li>
+     </ul>
+      <button id="add" (click)="addPlayer()">add player</button>
+      <button (click)="removePlayer()">remove player</button>
+     <button (click)="startRound()"> Start Round</button>
+      
+          
+          
+ 
+</div>

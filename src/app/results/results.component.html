@@ -1,0 +1,19 @@
+<div class="container">
+        <h2>Results</h2>
+
+      <div class="players" *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player=== selectedPlayer"> 
+   
+                <div >
+                  <span>{{player.userName}}</span>
+
+                  <span>{{calcScore(player)}}</span>
+                  <span *ngFor="let score of players.currentScore">{{player.score.par}}</span>
+                </div>
+  
+                    
+                   
+                  </div>
+  <div class="buttons">
+      <a routerLink="/roundSetup" routerLinkActive="active"> <button (click)="replay()">Play Again</button></a>
+    </div>
+  </div>

@@ -1,0 +1,148 @@
+<div class="container">
+  <h2>
+    Jamallin
+  </h2>
+  <div class="buttons">
+      <button (click)="toggle('create')">Add User</button>
+      <button (click)="toggle('update')">Update User</button>
+  <button (click)="toggle('delete')">Delete User</button>
+  
+  <button (click)="toggle('disc')">Upload discs</button>
+  <button (click)="toggle('course')">Upload Course</button>
+  <button (click)="toggle('fetch')">Fetch</button>
+</div>
+  <div *ngIf="switch=='disc'" class="discPost">
+      <form #form="ngForm" (ngSubmit)="postDisc(form.value)">
+    <ul>
+
+      <li>
+        <div>Name</div>
+        <input id="name" type="text" value="name" name="name" ngModel>
+      </li>
+      <li>
+        <div>Manufacturer</div>
+        <input id="manufacturer" type="text" value="manufacturer" name="manufacturer" ngModel>
+      </li>
+      <li>
+        <div>Fade</div>
+        <input id="fade" type="fade" value="fade" name="fade" ngModel>
+      </li>
+      <li>
+        <div>Type</div>
+        <input id="type" type="type" value="type" name="type" ngModel>
+      </li>
+      <li>
+        <div>Turn</div>
+        <input id="turn" type="text" value="turn" name="turn" ngModel>
+      </li>
+      <li>
+        <div>Distance</div>
+        <input id="distance" type="text" value="distance" name="distance" ngModel>
+      </li>
+    </ul>
+
+    <button>Submit</button>
+    </form>
+  </div>
+
+  <div *ngIf="switch=='delete'" class="userDelete">
+    <form #form="ngForm" (ngSubmit)="deleteUser(form.value)">
+      <ul>
+        <li>
+          <div>Email</div>
+          <input id="email" type="text" value="email" name="email" ngModel>
+        </li>
+        <li>
+          <div>Password</div>
+          <input id="passText" type="text" value="password" name="password" ngModel>
+        </li>
+      </ul>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="switch=='course'" class="coursePost">
+    <form #form="ngForm" (ngSubmit)="postCourse(form.value)">
+      <ul>
+        <li>
+          <div>Course name</div>
+          <input id="firstname" type="text" ng-model="firstName" value="First Name" name="firstName" ngModel>
+        </li>
+        <li>
+          <div>Location</div>
+          <input id="lastname" type="text" value="Last Name" name="lastName" ngModel>
+        </li>
+      </ul>
+
+      <button>Submit</button>
+    </form>
+  </div>
+  <div *ngIf="switch=='update'" class="userUpdate">
+      <form #form="ngForm" (ngSubmit)="updateUser(form.value)">
+          <ul>
+              <li>First Name
+                <input id="firstname" type="text" ng-model="firstName" value="First Name" name="firstName" ngModel>
+              </li>
+              <li>Last Name
+                <input id="lastname" type="text" value="Last Name" name="lastName" ngModel>
+              </li>
+              <li>Email
+                <input id="email" type="text" value="email" name="email" ngModel>
+              </li>
+              <li>Password
+                <input id="passText" type="text" value="password" name="password" ngModel>
+              </li>
+            </ul>
+        <button>Submit</button>
+      </form>
+    </div>
+    <div *ngIf="switch=='create'" class="userCreate">
+    <form #form="ngForm" (ngSubmit)="postUser(form.value)">
+        <ul>
+          <li>First Name
+            <input id="firstname" type="text" ng-model="firstName" value="First Name" name="firstName" ngModel>
+          </li>
+          <li>Last Name
+            <input id="lastname" type="text" value="Last Name" name="lastName" ngModel>
+          </li>
+          <li>Email
+            <input id="email" type="text" value="email" name="email" ngModel>
+          </li>
+          <li>Password
+            <input id="passText" type="text" value="password" name="password" ngModel>
+          </li>
+        </ul>
+        <button type="submit">Submit</button>   <button (click)="cancel()">Cancel</button>
+      </form>
+    </div>
+      
+    </div>
+    <div *ngIf="switch=='fetch'" class="userUpdate">
+        
+      <div>
+        {{this.users[0]._id}}
+      </div>
+          <button (click)="fetch()">Fetch Id</button>
+        
+      </div>
+
+
+  <div id="show">
+      <div *ngIf="switch=='delete'" class="userDelete">
+    <div>{{this.user.first}}</div>
+    <div>{{this.user.last}}</div>
+    <div>{{this.user.pass}}</div>
+    <div>{{this.user.email}}</div>
+    </div>
+    
+    <div *ngIf="switch=='disc'" class="discPost">
+        <div>{{this.disc.name}}</div>
+        <div>{{this.disc.manufacturer}}</div>
+        <div>{{this.disc.type}}</div>
+        <div>{{this.disc.turn}}</div>
+        <div>{{this.disc.fade}}</div>
+        <div>{{this.disc.distance}}</div>
+    </div>
+   
+  </div>
+  <button (click)="logout()">logout</button>
+

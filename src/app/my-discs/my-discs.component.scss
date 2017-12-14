@@ -1,0 +1,90 @@
+
+//@import url(/sass/style);
+$primary-color: #18121e;
+$secondary-color: #233237;
+$tertiary-color: #984b43;
+$font-color1:#eac67a;
+$font-color2: #984b43;
+
+
+body{
+    background-color: $secondary-color;
+    color:$font-color1
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;   
+    background-color: $primary-color;
+    h2{
+        color:$font-color1;
+
+    
+}
+    .discs{
+            
+            ul{
+                list-style-type: none;
+                li{
+                    margin: 0;
+                    padding: .8em .3em .2em .3em;
+                    height: 1.6em;
+                    width: 6rem;
+                    text-align: center;
+                    display: inline-block;
+                    
+                    background: $secondary-color;
+                    color: $font-color1;
+                    font-size: 1rem; 
+                    .selected{
+
+                        background-color: $secondary-color;
+                        color:$font-color1;
+                    }
+            }
+            :hover{
+                background-color: $primary-color;
+                color:$font-color1;
+                }
+                .selected{
+                         background-color: $tertiary-color;
+                         color:$font-color1;
+                 }
+            
+        }
+    }
+
+    .featuredDisc{
+        
+        h2{
+           
+            color:$font-color1;
+    
+    }
+        background: $secondary-color;
+        ul{
+            text-align: center;
+            list-style-type: none;
+         
+            li{
+                 text-decoration: none;
+            }
+        }      
+           button{
+               border-radius: 10%;
+               border-style: solid;
+               background-color: $primary-color;
+               border-color: $font-color1;
+               color: $font-color1;
+            }
+            button:hover{
+                background-color: $tertiary-color;
+                border-color: $primary-color;
+              
+            }
+            
+        }
+    
+}

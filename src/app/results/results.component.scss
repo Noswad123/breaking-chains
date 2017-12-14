@@ -1,0 +1,111 @@
+$primary-color: #18121e;
+$secondary-color: #233237;
+$tertiary-color: #984b43;
+$font-color1:#eac67a;
+$font-color2: #984b43;
+
+.container{
+        .header{
+               
+               
+                ul{
+                       
+                        li{
+                                display: inline-block;
+                        list-style-type: none;
+                        margin-right:1em;
+                        }
+                }
+              
+                margin-bottom: -4em;
+                padding-bottom: 0;
+        }
+        background-color: $secondary-color;
+        color:$font-color1;
+        margin-top: 1em;
+       
+        .scorecard{
+                
+                display: flex;
+                margin: 3em 0 2em 0;
+                padding-top:0;
+                padding-left: 2em;
+                
+                .divTableBody {
+                        display: table;
+                }
+                .header{
+                        margin-top: 2em;
+                       padding-bottom: 3em;
+                        text-decoration: underline;
+                        display: table-row;
+                        font-size: 2rem;
+                        .divTableCell{
+                                display: table-cell;
+                                padding: 3px 10px;
+                        }
+                }
+                li{
+                        list-style-type: none;
+                       
+                }
+                }
+     .players{
+        display: table-row;
+        .divTableCell{
+                display: table-cell;
+                padding: 3px 10px;
+        }
+        .scores{
+               
+
+                 list-style-type: none;
+                 display: flex;
+                       
+                margin-right: 2em;
+                
+                                         span.decr{
+                                                border-style:solid;
+                                                margin-right:1em;
+                                                padding: 0 .5em 0 .5em ;
+                                               
+                                                }
+                                        span.decr:hover{
+                                                background-color: $tertiary-color;
+                                                color:$font-color1;
+                                        }
+
+                                        span.incr:hover{
+                                                background-color: $tertiary-color;
+                                                color:$font-color1;
+                                        }
+                        
+                                         
+                                        span.incr{
+                                                border-style:solid;
+                                                margin-left:1em;
+                                                padding: 0 .5em 0 .5em ;
+                                                
+                                        }
+                                       
+                                }
+     }
+     
+                                button{
+                                        border-radius: 10%;
+                                        border-style: solid;
+                                        background-color: $primary-color;
+                                        border-color: $font-color1;
+                                        color: $font-color1;
+                                        margin-left: 1em;
+                                     }
+                                     button:hover{
+                                         background-color: $tertiary-color;
+                                         border-color: $primary-color;
+                                       
+                                     }
+                        }
+        
+        
+
+
