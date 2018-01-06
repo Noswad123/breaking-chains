@@ -1,36 +1,16 @@
-$primary-color: #18121e;
-$secondary-color: #233237;
-$tertiary-color: #984b43;
-$font-color1:#eac67a;
-$font-color2: #984b43;
+@import '~assets/styles/style';
 
-.container{
-    background-color: $secondary-color;
-    color:$font-color1;
-    padding: .5em 0 2em 2em;
-    margin-top: 1em;
+
     .buttons{
         display:flex;
         flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
     }
-        h2{
-
-            color:$font-color1;
-        }
-
-        button{
-            border-radius: 10%;
-            border-style: solid;
-            background-color: $primary-color;
-            border-color: $font-color1;
-            color: $font-color1;
-            width: 5em;
-         }
-         button:hover{
-             background-color: $tertiary-color;
-             border-color: $primary-color;
-           
-         }
+.switchcase{
+    min-height: 50vh;
+    margin-bottom: 50px;
+}
          ul{
              list-style-type: none;
              li{
@@ -38,14 +18,33 @@ $font-color2: #984b43;
                  div{
                     width: 10em;
                 }
-                input{
-                    background-color: $tertiary-color;
-                    color: $font-color1;
-                }
+             
              }
              
          }
-}
+
+         .users{
+             border-color: $font-color1;
+             border-width: 2px;
+             border-style: solid;
+            width: 50%;
+            margin: 10px 0;
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            .userInfo{
+                margin-right: 6em;
+            }
+            .userButtons{
+                display: flex;
+                flex-direction: column;
+                margin-right:3em;
+                
+            }
+            
+         }
+
 #show{
     display: flex;
     flex-wrap: wrap;

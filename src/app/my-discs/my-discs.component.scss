@@ -1,39 +1,35 @@
 
 //@import url(/sass/style);
-$primary-color: #18121e;
-$secondary-color: #233237;
-$tertiary-color: #984b43;
-$font-color1:#eac67a;
-$font-color2: #984b43;
+@import '~assets/styles/style';
 
 
-body{
-    background-color: $secondary-color;
-    color:$font-color1
-}
 
+@import '~assets/styles/style';
 
-.container{
-    display: flex;
+.featureDisc{
+    display:flex;
     flex-direction: column;
-    flex-wrap: wrap;   
-    background-color: $primary-color;
-    h2{
-        color:$font-color1;
-
-    
+    div{
+        flex:1 100%;
+    }
 }
     .discs{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin-left: 1em;
             
-            ul{
-                list-style-type: none;
-                li{
-                    margin: 0;
-                    padding: .8em .3em .2em .3em;
-                    height: 1.6em;
+            
+                div{
+                    display: flex;
+                    
+                    justify-content: center;
+                    
+                    margin: .25em;
+                   padding:0;
+                    min-height: 2em;
                     width: 6rem;
-                    text-align: center;
-                    display: inline-block;
+                   
                     
                     background: $secondary-color;
                     color: $font-color1;
@@ -43,48 +39,34 @@ body{
                         background-color: $secondary-color;
                         color:$font-color1;
                     }
-            }
-            :hover{
-                background-color: $primary-color;
-                color:$font-color1;
-                }
-                .selected{
-                         background-color: $tertiary-color;
-                         color:$font-color1;
-                 }
+              
+            
             
         }
+        :hover{
+            background-color: $tertiary-color;
+            color:$font-color1;
+            }
+            .selected{
+                     background-color: $tertiary-color;
+                     color:$font-color1;
+             }
     }
 
     .featuredDisc{
-        
+        text-align: center;
+        margin-top: 1em;
         h2{
-           
             color:$font-color1;
     
     }
         background: $secondary-color;
         ul{
-            text-align: center;
             list-style-type: none;
          
             li{
                  text-decoration: none;
             }
-        }      
-           button{
-               border-radius: 10%;
-               border-style: solid;
-               background-color: $primary-color;
-               border-color: $font-color1;
-               color: $font-color1;
-            }
-            button:hover{
-                background-color: $tertiary-color;
-                border-color: $primary-color;
-              
-            }
-            
         }
+    }
     
-}

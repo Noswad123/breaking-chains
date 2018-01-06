@@ -1,36 +1,45 @@
-<div class="container">
-    <h2>{{course.name}}<button (click)="viewCourses()">Change Course</button> </h2>  
+<div class="setup-container">
+<div class="title add-border">
+
+  <h1>Round Setup</h1>
+</div>
+  <div class="select-course add-border">
+    <h2>{{course.name}} </h2>
+    <button (click)="viewCourses()">Change Course</button>
     <div id="courses">
-        <ul>
-    <li  class="courseName" *ngFor="let course of courses" (click)="onCourse(course)" [class.selected]="course=== toChange">
-       {{course.name}}</li>
-
-     </ul>
-    </div>
-    <div class="selectedList">
-  <ul>
-     
-     
-     
-     <li  class="name" *ngFor="let player of selectedPlayers" (click)="onRemoval(player)" [class.remove]="player=== toBeRemoved">
-        {{player.userName}}</li>
-
+      <ul>
+        <li class="courseName" *ngFor="let course of courses" (click)="onCourse(course)" [class.selected]="course=== toChange">
+          {{course.name}}</li>
       </ul>
-        
     </div>
-        <h2>Add a Player</h2>
-        <ul> 
-        
-     <li> <input type="text" value="guest" [(ngModel)]="guest"><button (click)="addGuest()" >add guest</button></li>
-     
-       <li class="name"*ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player=== selectedPlayer">
-          {{player.userName}}</li>
-     </ul>
-      <button id="add" (click)="addPlayer()">add player</button>
-      <button (click)="removePlayer()">remove player</button>
-     <button (click)="startRound()"> Start Round</button>
-      
-          
-          
- 
+  </div>
+
+  <div class="selectedList add-border">
+    <h2>Selected Players</h2>
+    <p *ngIf="empty">(No Players Selected)</p>
+    <ul *ngIf="!empty">
+      <li class="name" *ngFor="let player of selectedPlayers" (click)="onRemoval(player)" [class.remove]="player=== toBeRemoved">
+        {{player.userName}}</li>
+    </ul>
+    <button (click)="removePlayer()">remove player</button>
+  </div>
+
+  <div class="add-player add-border">
+    <h2>Add a Player</h2>
+    <div>
+        <ul id="add-list">
+          <li class="name" *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player=== selectedPlayer">
+            {{player.userName}}</li>
+        </ul>
+        <button id="add" (click)="addPlayer()">add player</button>
+      </div>
+    <div id="add-guest">
+      <input type="text" value="guest" [(ngModel)]="guest">
+      <button (click)="addGuest()">add guest</button>
+    </div>
+   
+  </div>
+
+
+  <button (click)="startRound()"> Start Round</button>
 </div>

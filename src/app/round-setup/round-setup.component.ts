@@ -17,6 +17,7 @@ courses:Course[];
 selectedPlayer:Player;
 toBeRemoved:Player;
 guest:string="";
+empty=true;
   constructor(
       private scorecardService: ScorecardService,
       private router:Router
@@ -54,7 +55,7 @@ getCourses(){
   getPlayers(){
     this.players=this.scorecardService.getPlayers();
       this.selectedPlayers=this.scorecardService.selectedPlayers;
-    
+    this.isEmpty();
 
   }
 
@@ -64,6 +65,7 @@ getCourses(){
       console.log(this.selectedPlayer.userName+" was added to the round");
       this.findPlayer(this.selectedPlayer,this.selectedPlayers,this.players);
     } 
+    this.isEmpty();
 
   }
   removePlayer(){
@@ -92,9 +94,13 @@ getCourses(){
     
   }
   startRound(){
+    if(this.empty)
+    {
+        alert("You must add at least one player before you start your round");
+    }else{
 this.scorecardService.loadScorecard(this.course,this.selectedPlayers);
 this.router.navigate(["scorecard"]);
-    
+}
   }
   getCourse(){
 
@@ -118,9 +124,15 @@ this.router.navigate(["scorecard"]);
     player.currentScore=this.course.holes;
     this.selectedPlayers.push(player);
     }
-
+    this.isEmpty();
 
   }
-  
+  isEmpty(){
+    if(!this.selectedPlayers||this.selectedPlayers.length==0){
+    this.empty= true;
+    }else{
+      this.empty=false;
+    }
+  }
 
 }

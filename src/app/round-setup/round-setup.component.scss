@@ -1,83 +1,74 @@
-$primary-color: #18121e;
-$secondary-color: #233237;
-$tertiary-color: #984b43;
-$font-color1:#eac67a;
-$font-color2: #984b43;
+@import '~assets/styles/style';
+.add-border {
+  border-style: solid;
+  border-color: $font-color1;
+  border-width: 0 0 .3em 0;
+  padding-bottom: 20px;
+  margin: 20px 0;
+}
 
-.container{
-    background-color: $secondary-color;
-    color:$font-color1;
-    padding: .5em 0 2em 2em;
-    margin-top: 1em;
-     .selectedList{
-        width:50%;
-            border-style: solid;
-             border-color:$font-color1;
-             border-width: .3em 0 .3em 0;
-
-     }
-    ul{
-        list-style-type: none;
-        li{
-            margin: .5em;
-            div{
-                width: 10em;
-            }
-            input{
-                background-color: $tertiary-color;
-                color: $font-color1;
-            }
-        }
-        .name:hover{
-            background-color: $tertiary-color;
-            
-        }
-        .courseName:hover{
-            background-color: $tertiary-color;
-            
-        }
-        .remove{
-            
-                     background-color: $tertiary-color;
-                    color:$font-color1;
-                }
-       
-            .selected{
-                
-                         background-color: greenyellow;
-                        color:$secondary-color;
-                    }
-            
-            
-        
+.setup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title{
+      flex: 1 100%;
+  }
+  .select-course {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    .courseName:hover {
+      background-color: $tertiary-color;
     }
-        button{
-            border-radius: 10%;
-            border-style: solid;
-            background-color: $primary-color;
-            border-color: $font-color1;
-            color: $font-color1;
-            margin-left: 1em;
-            width: 10em;
-         }
-         #add:hover{
-            background-color: greenyellow;
-            border-color: $primary-color;
-            color: $secondary-color;
-         }
-         button:hover{
-             background-color: $tertiary-color;
-             border-color: $primary-color;
-           
-         }
-         #courses{
-             display:none;
-             background-color: $primary-color;
-             position: absolute;
-         }
-         .name{
-             text-align: center;
-             width: 25%;
-         }
-         
+  }
+  .selectedList {
+    width: 50%;
+  }
+  .add-player {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    #add-guest {
+      margin: 10px 0px;
+      ;
+      display: flex;
+      justify-content: space-between;
+      button {
+        margin-left: 10px;
+      }
+      input {
+        flex: 1 50%;
+      }
+    }
+    .name:hover {
+      background-color: $tertiary-color;
+    }
+  }
+  ul {
+    list-style-type: none;
+    li {
+      margin: .5em;
+      width: 10em;
+    }
+    .remove {
+      background-color: $tertiary-color;
+      color: $font-color1;
+    }
+    .selected {
+      background-color: $font-color1;
+      color: $secondary-color;
+    }
+  }
+  #add:hover {
+    background-color: $font-color1;
+    border-color: $primary-color;
+    color: $secondary-color;
+  }
+  #courses {
+    display: none;
+    background-color: $primary-color;
+    position: absolute;
+  }
 }

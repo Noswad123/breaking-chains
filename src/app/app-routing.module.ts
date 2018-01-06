@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'myDiscs',  component: MyDiscsComponent },
   { path: 'login',  component: LoginComponent },
   { path: 'detail/:id', component: DiscDetailComponent },
-  { path: 'login.page', component: PlayerPageComponent },
+  { path: 'player.page', component: PlayerPageComponent },
   { path: 'browseDiscs', component: BrowseDiscsComponent },
   { path: 'roundSetup', component: RoundSetupComponent },
   { path: 'results', component: ResultsComponent },

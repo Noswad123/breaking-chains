@@ -142,7 +142,7 @@ router.post('/user',function(req,res){
     console.log("post a user");
     var newUser=new User();
     newUser.firstName=req.body.firstName;
-    newUser.lastName=req.body.lastname;
+    newUser.lastName=req.body.lastName;
     //Need to investigate how to add user name (a property under player info)
     newUser.playerInfo=req.body.playerInfo;
     newUser.email=req.body.email;

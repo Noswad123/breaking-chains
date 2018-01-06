@@ -27,22 +27,26 @@
       <div class="divTableCell">Players</div>
       <div class="divTableCell">Score</div>
     </div>
-    <div class="players" *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player=== selectedPlayer"> 
+    <div class="players" *ngFor="let player of players; let i =index; trackBy: arrayTrackBy" (click)="onSelect(player)" [class.selected]="user=== selectedPlayer"> 
  
-              <div class="divTableCell">{{player.userName}}</div>
+              <div class="divTableCell">{{this.player.userName}} </div>
 
                 <div class="divTableCell scores">
-                  <span class="decr" (click)="decrScore()">-</span>
-                  <span>{{player.currentScore[currentHole].par}}</span>
-                  <span class="incr" (click)="incrScore()">+</span>
+                  <span *ngIf="isSelected(player)" class="decr" (click)="decrScore(i)">-</span>
+                  <span>{{this.player.currentScore[currentHole].par}}</span>
+              <span *ngIf="isSelected(player)" class="incr" (click)="incrScore(i)">+</span>
                 </div>
         
   
   </div>
 </div>
 </div>
+<div class="test-div">
+  {{this.players[0].currentScore[currentHole].par}}
+  {{this.players[1].currentScore[currentHole].par}}
+</div>
 <div class="buttons">
-    <button (click)="showPlayers()">add player</button>
-    <button>Remove player</button>
+   <!-- <button (click)="showPlayers()">add player</button>
+    <button>Remove player</button>-->
     <a routerLink="/results" > <button> Finish Round</button></a>
   </div>

@@ -45,6 +45,20 @@ export class AdminComponent implements OnInit {
     this.getUsers();
 
   }
+  isSelected(user){
+
+      if(user.firstName==this.user.firstName)
+      {
+
+        return true;
+      }else{
+        return false;
+      }
+  }
+  onSelect(user){
+    this.user=user;
+    console.log(this.user.firstName);
+  }
   isLoggedIn() {
     if (!this.adminService.admin) {
       this.router.navigate(["login"])
@@ -114,21 +128,22 @@ export class AdminComponent implements OnInit {
     console.log("course added to the database");
 
   }
-  updateUser(user) {
-    var message;
-    message = this.returnId(user.email);
+  updateUser() {
+   
+   var message;
+    message = this.returnId(this.user.email);
 
     if (message != "User not found") {
-    this.userService.updateUser(user);
+    this.userService.updateUser(this.user);
     }
     console.log(message);
   }
 
-  deleteUser(user) {
+  deleteUser() {
 
-    console.log("Preparing to delete user at this email: " + user.email)
+    console.log("Preparing to delete user at this email: " + this.user.email)
     var message;
-    message = this.returnId(user.email);
+    message = this.returnId(this.user.email);
 
     if (message != "User not found") {
 
@@ -139,8 +154,9 @@ export class AdminComponent implements OnInit {
 
   }
   returnId(email) {
-
+console.log(email);
     for (var i = 0; i < this.users.length; i++) {
+      console.log(this.users[i].email);
       if (email == this.users[i].email) {
         return this.users[i]._id;
       }
@@ -196,7 +212,7 @@ export class AdminComponent implements OnInit {
     if (completion == 4) {
       this.userService.postUser(user).subscribe(res => console.log(res));
       console.log("User added to the database");
-      this.users.push(user);
+      this.getUsers();
       console.log(this.users);
     }
   }

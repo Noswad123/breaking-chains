@@ -1,0 +1,19 @@
+#{$all-text-inputs}
+{
+    position: relative;
+    padding: 10px;
+    font-size: $base-seize;
+    border:solid 1px #333;
+    box-shadow: -4px 4px 0 #444;
+}
+
+#{$all-text-inputs-focus},
+#{$all-text-inputs-hover}
+{
+border-color:#333;
+outline-color: $success;
+box-shadow: -6px 6px 0 #222;
++placeholder{
+    color:#888;
+}
+}

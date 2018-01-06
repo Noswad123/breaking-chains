@@ -1,8 +1,4 @@
-$primary-color: #18121e;
-$secondary-color: #233237;
-$tertiary-color: #984b43;
-$font-color1:#eac67a;
-$font-color2: #984b43;
+@import '~assets/styles/style';
 
 .container{
     background-color: $secondary-color;

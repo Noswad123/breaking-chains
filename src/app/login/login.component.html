@@ -1,11 +1,40 @@
-<div class="container">
-    <h2>Login</h2>
 
-    <ul>
-        <li><div>Email</div> <input id="nameText" type="text" value="email" [(ngModel)]="email"></li>
-        <li><div>Password</div> <input id="passText" type="text" value="password" [(ngModel)]="password"></li>
-    </ul>
+    <div class="form-wrapper"*ngIf="!onRegister">
+    <h2 class="form-title">Login</h2>
+
+    <div class="form-row">
+      <label>Email </label>
+       <input id="nameText" type="text" value="email" [(ngModel)]="email">
+    </div>
+      <div class="form-row">
+          <label>Password </label> <input id="passText" type="password" value="password" [(ngModel)]="password">
+    </div>
     
     <button id="login" (click)="login()">login</button>
-    <a routerLink="/register"><button >Register</button></a>
+    
+    <button id="register" (click)="toggleRegister()">Not member? Sign Up</button>
+
 </div>
+    <div class="form-wrapper" *ngIf="onRegister">
+            <h2 class="form-title">Register</h2>
+          
+            <form #form="ngForm" (ngSubmit)="postUser(form.value)">
+            
+                <div class="form-row">First Name
+                  <input id="firstname" type="text" ng-model="firstName" value="First Name" name="firstName" ngModel>
+                </div>
+                <div class="form-row">Last Name
+                  <input id="lastname" type="text" value="Last Name" name="lastName" ngModel>
+                </div>
+               <div class="form-row">Email
+                  <input id="email" type="text" value="email" name="email" ngModel>
+                </div>
+                <div class="form-row">Password
+                  <input id="passText" type="text" value="password" name="password" ngModel>
+                </div>
+              <button type="submit">Submit</button> 
+              <button (click)="toggleRegister()">Cancel</button>
+            </form>
+          
+          </div>
+

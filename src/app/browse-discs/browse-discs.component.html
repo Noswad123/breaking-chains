@@ -1,33 +1,18 @@
-<div  class="container" >
+<div class='featuredDisc'>
 
-    <div  ngif="1!=1" class='featuredDisc'>
-        <ul id="sort">
-    
-          <li><h2> {{selectedDisc.name}} </h2></li>
-            
-          
-          <li> Manufacturer: {{selectedDisc.manufacturer}}</li>
-          <li> Type: {{selectedDisc.type}}</li>
-          <li> Distance: {{selectedDisc.distance}}</li>
-          <li>Turn: {{selectedDisc.turn}}</li>
-          <li> fade: {{selectedDisc.fade}}</li>
-          <li>Flight Chart: coming soon...</li>
-        
-    
-        </ul>
-      </div>
-  <div class="discs">
-    
-
-      <div *ngFor="let disc of discs" (click)="onSelect(disc)" [class.selected]="disc === selectedDisc">
-        <div>{{disc.name}}</div> 
-      </div>
-    
+  <div>
+    <h2> {{selectedDisc.name}} </h2>
   </div>
-  
-  
+  <div> Manufacturer: {{selectedDisc.manufacturer}}</div>
+  <div> Distance: {{selectedDisc.distance}}</div>
+  <div>Turn: {{selectedDisc.turn}}</div>
+  <div> fade: {{selectedDisc.fade}}</div>
+  <div>Flight Chart: coming soon... </div>
 </div>
 
-<div id="test">
+<div class="discs">
+  <div *ngFor="let disc of discs" [class.selected]="disc === selectedDisc">
+    <button (click)="onSelect(disc)">{{disc.name}}</button>
+  </div>
 
 </div>

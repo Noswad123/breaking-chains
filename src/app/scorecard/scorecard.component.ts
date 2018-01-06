@@ -18,6 +18,7 @@ export class ScorecardComponent implements OnInit {
   currentHole: number=0;
   currentDist: number;
   selectedPlayer:Player;
+  count=0;
 
   constructor(
     private scorecardService: ScorecardService,
@@ -59,19 +60,19 @@ export class ScorecardComponent implements OnInit {
   onSelect(player: Player): void {
     this.selectedPlayer = player;
     console.log(this.selectedPlayer.userName);
-    console.log(this.selectedPlayer.currentScore[this.currentHole].par)
+   
     
   }
 
-  decrScore(): void {
-console.log(this.selectedPlayer.userName);
-    if (this.selectedPlayer.currentScore[this.currentHole].par == 1) { } else {
-      this.selectedPlayer.currentScore[this.currentHole].par -= 1;
+  decrScore(i){
+console.log(this.players[i].currentScore);
+    if (this.players[i].currentScore[this.currentHole].par == 1) { } else {
+      this.players[i].currentScore[this.currentHole].par -= 1;
     }
   }
-  incrScore(): void {
-
-    this.selectedPlayer.currentScore[this.currentHole].par += 1;
+  incrScore(i) {
+    console.log(this.players[i].currentScore);
+    this.players[i].currentScore[this.currentHole].par += 1;
   }
 
   changeHole(change: number) {
@@ -88,9 +89,29 @@ console.log(this.selectedPlayer.userName);
 finishRound(){
   
 }
+isSelected(player:Player){
+
+if(this.selectedPlayer){
+  
+  if(player.userName ==this.selectedPlayer.userName){
+    return true;
+  }else{
+
+    return false;
+  }
+}else{
+  return false;
+}
+
+}
 showPlayers(){
 
   console.log(this.players);
+}
+
+arrayTackBy(index, player){
+
+    return player.userName;
 }
 
 }

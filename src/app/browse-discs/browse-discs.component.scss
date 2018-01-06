@@ -1,28 +1,12 @@
 
-//@import url(/sass/style);
-$primary-color: #18121e;
-$secondary-color: #233237;
-$tertiary-color: #984b43;
-$font-color1:#eac67a;
-$font-color2: #984b43;
+@import '~assets/styles/style';
 
-
-body{
-    background-color: $secondary-color;
-    color:$font-color1
-}
-
-
-.container{
-    display: flex;
+.featureDisc{
+    display:flex;
     flex-direction: column;
-    flex-wrap: wrap;   
-    
-    background-color: $primary-color;
-    h2{
-        color:$font-color1;
-
-    
+    div{
+        flex:1 100%;
+    }
 }
     .discs{
             display: flex;
@@ -50,10 +34,7 @@ body{
                         background-color: $secondary-color;
                         color:$font-color1;
                     }
-                    span{
-                        align-self: center;
-                    }
-            
+              
             
             
         }
@@ -84,4 +65,3 @@ body{
         }
     }
     
-}

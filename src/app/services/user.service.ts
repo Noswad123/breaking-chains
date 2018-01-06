@@ -6,7 +6,7 @@ import { User, Disc } from '../models/index';
 
 @Injectable()
 export class UserService {
-    private url = "api/user";
+    private url = "api/user/";
     private getUrl = "api/users";
     private users ;
     private user: User;
@@ -63,9 +63,9 @@ export class UserService {
     }
 
     updateUser(user){
-
+       
         console.log("Update works");
-        this.http.put(this.url+user.id,user).subscribe();
+        this.http.put(this.url+user._id,user).subscribe();
     }
 
     deleteUser(id) {

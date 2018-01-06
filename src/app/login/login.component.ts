@@ -16,8 +16,22 @@ export class LoginComponent implements OnInit {
     returnUrl: string;
     email: string = "jamal.a.dawson@gmail.com";
     password: string = "jamal";
-    user: User;
     users;//:User[];
+    onRegister=false;
+    user:User={
+        firstName: "",
+      lastName: "",
+      password: "",
+      email: "",
+      friends:[],
+      myDiscs:[],
+      favCourses:[],
+      Stats:[],
+      _id:"",
+      playerInfo:{
+        userName:"",
+        currentScore:[]
+      }};
 
 
     constructor(
@@ -59,7 +73,7 @@ export class LoginComponent implements OnInit {
                         this.userService.isloggedin = true;
                         this.scorecardService.addSelected(this.users[i].playerInfo);
                         console.log(this.users[i].playerInfo.userName + " was successfully logged in.");
-                        this.router.navigate(["login.page"]);
+                        this.router.navigate(["player.page"]);
                     } else {
                         console.log("You were not logged in");
                     }
@@ -84,6 +98,52 @@ export class LoginComponent implements OnInit {
 
         }
 
+    }
+    postUser(user) {
+        var completion = 0;
+        var r = /\b[\w._%+-]+@[\w.-]+\.[A-Za-z]{2,4}\b/;
+        console.log(user);
+        if (user.firstName) {
+          completion++;
+          this.user.firstName = "";
+        } else {
+          this.user.firstName = "Please submit a valid first name";
+        }
+        if (user.lastName) {
+          completion++;
+          this.user.lastName = "";
+        } else {
+          this.user.lastName = "Please Submit a valid last name";
+        }
+        if (user.password) {
+          completion++;
+          this.user.password = "";
+        } else {
+          this.user.password = "Please Submit a valid Password";
+        }
+    
+        if (user.email.match(r)) {
+          completion++;
+    
+          this.user.email = "";
+        } else {
+          this.user.email = "Please Submit a valid email";
+    
+        }
+    
+        console.log(completion);
+        if (completion == 4) {
+          this.userService.postUser(user).subscribe(res => console.log(res));
+          console.log("User added to the database");
+          this.userService.setUser(this.user);
+                        this.userService.isloggedin = true;
+                        this.scorecardService.addSelected(this.user.playerInfo);
+                        console.log(this.user.playerInfo.userName + " was successfully logged in.");
+          this.router.navigate(["player.page"])
+        }
+      }
+    toggleRegister(){
+        this.onRegister=!this.onRegister;
     }
 
 }
