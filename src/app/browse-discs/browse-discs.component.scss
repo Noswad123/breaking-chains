@@ -1,67 +1,113 @@
 
 @import '~assets/styles/style';
+$select1:$fresh;
+$select2:$tan;
+$select3:$burgundy;
+.featuredDiscs{
+    display: flex;
+    justify-content: space-between;
+.featuredDisc{
 
-.featureDisc{
     display:flex;
     flex-direction: column;
-    div{
+    align-items: center;
+    margin: 50px 25px;
+    width:30%;   
+
+    .feature-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width:30%;
+        .option-one{
+            background-color: $select1;
+            height: 10px;
+            width:10px;
+            border-radius: 100%;
+        }
+        .option-two{
+          background-color: $select2;
+          height: 10px;
+            width:10px;
+            border-radius: 100%;
+      }
+      .option-three{
+          background-color: $select3;
+          height: 10px;
+            width:10px;
+            border-radius: 100%;
+      }
+    }
+    ul{
+        list-style-type: none;
+     
+        li{
+             text-decoration: none;
+        }
+    }
+    >div{
         flex:1 100%;
     }
+}
 }
     .discs{
             display: flex;
             flex-wrap: wrap;
-            text-align: center;
-            margin-left: 1em;
+            justify-content: space-between;
+            align-content: space-around;
+            padding: 20px;
+            .selected{
+                background-color: $tertiary-background-color;
+                color:$font-color1;
+        }
             
-            
-                div{
-                    display: flex;
-                    
-                    justify-content: center;
-                    
-                    margin: .25em;
-                   padding:0;
+                .disc{                    
+                    margin: 20px 10px;
+                   padding:5px;
                     min-height: 2em;
-                    width: 6rem;
-                   
+                    width: 6.5rem;
+                   border:solid $font-color1;
                     
-                    background: $secondary-color;
+                    background: $secondary-background-color;
                     color: $font-color1;
                     font-size: 1rem; 
                     .selected{
 
-                        background-color: $secondary-color;
+                        background-color: $secondary-background-color;
                         color:$font-color1;
                     }
               
-            
-            
-        }
-        :hover{
-            background-color: $tertiary-color;
-            color:$font-color1;
+            button{
+
+                &:hover{
+                    background-color: $tertiary-background-color;
+                    color:$font-color1;
+                    }
             }
-            .selected{
-                     background-color: $tertiary-color;
-                     color:$font-color1;
-             }
+          .options{
+              display: flex;
+              justify-content: space-between;
+              div{
+                  height: 10px;
+                  width:10px;
+                  border-radius: 100%;
+              }
+              .option-one{
+                  background-color: $select1;
+                  cursor: pointer;
+              }
+              .option-two{
+                background-color: $select2;
+                cursor: pointer;
+            }
+            .option-three{
+                background-color: $select3;
+                cursor: pointer;
+            }
+          }  
+        }
+        
+            
     }
 
-    .featuredDisc{
-        text-align: center;
-        margin-top: 1em;
-        h2{
-            color:$font-color1;
-    
-    }
-        background: $secondary-color;
-        ul{
-            list-style-type: none;
-         
-            li{
-                 text-decoration: none;
-            }
-        }
-    }
-    
+   

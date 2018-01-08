@@ -4,6 +4,7 @@ import { Player } from '../models/Player'
 import { Course } from '../models/course'
 import { Hole } from '../models/hole'
 import { ScorecardService } from '../services/index'
+import { getCurrentDebugContext } from '@angular/core/src/view/services';
 
 @Component({
   selector: 'app-scorecard',
@@ -13,66 +14,60 @@ import { ScorecardService } from '../services/index'
 export class ScorecardComponent implements OnInit {
   course: Course;
   players: Player[];
-  holes: Hole[];
   score: number;
   currentHole: number=0;
   currentDist: number;
-  selectedPlayer:Player;
-  count=0;
-
+  updateTotal=[];
+  selectedPlayer:Player={
+ userName:"blank", 
+ currentScore:[] 
+}
   constructor(
     private scorecardService: ScorecardService,
     private router: Router) { }
 
   ngOnInit() {
-
     this.getCourse();
     this.getPlayers();
-    this.getHoles(this.course);
-    
-
+    this.getHoles(this.course); 
   }
+
   getCourse() {
-
     this.course = this.scorecardService.getCourse();
-
   }
   getHoles(course: Course) {
-
-    this.holes = this.course.holes;
+  
     for(var i=0;i<this.players.length;i++){
-      for(var j=0; j<this.holes.length;j++){
-        
-          this.players[i].currentScore.push(this.holes[j]);
-         
+      this.updateTotal.push(0);
+      for(var j=0; j<this.course.holes.length;j++){
+        this.players[i].currentScore.push(new Hole);
+        this.players[i].currentScore[j].par=this.course.holes[j].par
+        this.players[i].currentScore[j].distance=this.course.holes[j].distance               
+      this.updateTotal[i]+=this.course.holes[j].par;
       }
       }
       
     }
   
   getPlayers() {
-
-    this.players = this.scorecardService.getSelectedPlayers();
-   
-
-  }
-
-  onSelect(player: Player): void {
-    this.selectedPlayer = player;
-    console.log(this.selectedPlayer.userName);
-   
     
+    this.players = this.scorecardService.getSelectedPlayers();  
+
   }
+
 
   decrScore(i){
-console.log(this.players[i].currentScore);
+console.log(i);
     if (this.players[i].currentScore[this.currentHole].par == 1) { } else {
       this.players[i].currentScore[this.currentHole].par -= 1;
+      this.updateTotal[i] -= 1;
     }
+
   }
   incrScore(i) {
-    console.log(this.players[i].currentScore);
+    console.log(i);
     this.players[i].currentScore[this.currentHole].par += 1;
+    this.updateTotal[i] += 1;
   }
 
   changeHole(change: number) {
@@ -89,21 +84,7 @@ console.log(this.players[i].currentScore);
 finishRound(){
   
 }
-isSelected(player:Player){
 
-if(this.selectedPlayer){
-  
-  if(player.userName ==this.selectedPlayer.userName){
-    return true;
-  }else{
-
-    return false;
-  }
-}else{
-  return false;
-}
-
-}
 showPlayers(){
 
   console.log(this.players);
@@ -113,5 +94,6 @@ arrayTackBy(index, player){
 
     return player.userName;
 }
+
 
 }

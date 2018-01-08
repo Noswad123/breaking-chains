@@ -15,16 +15,8 @@ import { DiscService, UserService } from '../services/index';
 export class BrowseDiscsComponent implements OnInit {
 
   discs:any;     //How come discs=Disc[] doesn't work but tempDiscs=[] does
-  selectedDisc:Disc={
-    name: "Select a Disc",
-    manufacturer:"----",
-    distance:0,
-    turn:"----",
-    fade:"----",
-    type:"---"
-  };
-
-
+  selectedDiscs=new Array(3);
+ 
   constructor(
     private location: Location,
     private discService: DiscService,
@@ -33,13 +25,34 @@ export class BrowseDiscsComponent implements OnInit {
 
     ngOnInit(): void {    
     
-      this.getDiscs();   
+      this.getDiscs();
+      this.loadSelector(); 
+     
     }
   
   getDiscs(): void {
-    var local;
-    this.discService.getDiscs().subscribe((res)=>this.discs=res)
-    }
+   
+    this.discService.getDiscs().subscribe();
+   
+    this.discs=this.discService.loadDiscs()
+   
+  
+  }
+  loadSelector(){
+
+for(var i=0;i<this.selectedDiscs.length;i++)
+{
+  this.selectedDiscs[i]={
+    Name: "Select a Disc",
+    Manufacturer:"----",
+    Distance:0,
+    Turn:"----",
+    Fade:"----",
+    Type:"---"
+  };
+}
+
+  }
   
     
   sortDiscs(status: string): void {
@@ -70,8 +83,8 @@ export class BrowseDiscsComponent implements OnInit {
 
  
 
-  onSelect(disc: Disc): void {
-    this.selectedDisc = disc;
+  onSelect(disc: Disc,i): void {
+    this.selectedDiscs[i] = disc;
   }
 
   back(): void {

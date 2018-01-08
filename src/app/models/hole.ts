@@ -7,4 +7,5 @@ export class Hole{
     par: number;
 
 
+
 }

@@ -1,72 +1,36 @@
-
-//@import url(/sass/style);
 @import '~assets/styles/style';
-
-
-
-@import '~assets/styles/style';
-
-.featureDisc{
-    display:flex;
-    flex-direction: column;
-    div{
-        flex:1 100%;
-    }
+.featuredDisc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    flex: 1 100%;
+  }
 }
-    .discs{
-            display: flex;
-            flex-wrap: wrap;
-            text-align: center;
-            margin-left: 1em;
-            
-            
-                div{
-                    display: flex;
-                    
-                    justify-content: center;
-                    
-                    margin: .25em;
-                   padding:0;
-                    min-height: 2em;
-                    width: 6rem;
-                   
-                    
-                    background: $secondary-color;
-                    color: $font-color1;
-                    font-size: 1rem; 
-                    .selected{
 
-                        background-color: $secondary-color;
-                        color:$font-color1;
-                    }
-              
-            
-            
-        }
-        :hover{
-            background-color: $tertiary-color;
-            color:$font-color1;
-            }
-            .selected{
-                     background-color: $tertiary-color;
-                     color:$font-color1;
-             }
+.discs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  .disc {
+    padding: 10px;
+    min-height: 20px;
+    margin: 3px;
+    //width: 6rem;
+    box-sizing: border-box;
+    &.selected {
+      button {
+        background-color: $tertiary-background-color;
+        color: $font-color1;
+      }
     }
-
-    .featuredDisc{
-        text-align: center;
-        margin-top: 1em;
-        h2{
-            color:$font-color1;
-    
+    button {
+      &:hover {
+        background-color: $tertiary-background-color;
+        color: $font-color1;
+      }
     }
-        background: $secondary-color;
-        ul{
-            list-style-type: none;
-         
-            li{
-                 text-decoration: none;
-            }
-        }
-    }
-    
+  }
+}

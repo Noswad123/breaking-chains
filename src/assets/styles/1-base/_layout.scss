@@ -11,11 +11,12 @@ html {
 html,
 body {
   height: 100%;
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   align-items: stretch;
+  */
   margin: 0;
-  background-color: $primary-color;
+  background-color: $base-background-color;
 }
 router-outlet
 {
@@ -25,13 +26,19 @@ app-root{
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
-app-root > :not(:first-child){
+app-root >:last-child{
   width: 80%;
-  background-color: $secondary-color;
-  color:$font-color1;
-  padding: .5em 0 2em 2em;
-  margin-top: 1em;
+  background-color: $secondary-background-color;
+ 
+  
+  margin-top: 30px;
+  padding-top: 30px;
+  border-radius:10px;
+  box-shadow: 0px 5px 2px 2px black;
+  
 }
+
 
 

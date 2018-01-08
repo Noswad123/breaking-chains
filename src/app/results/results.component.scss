@@ -16,7 +16,7 @@
                 margin-bottom: -4em;
                 padding-bottom: 0;
         }
-        background-color: $secondary-color;
+        background-color: $secondary-background-color;
         color:$font-color1;
         margin-top: 1em;
        
@@ -67,12 +67,12 @@
                                                
                                                 }
                                         span.decr:hover{
-                                                background-color: $tertiary-color;
+                                                background-color: $tertiary-background-color;
                                                 color:$font-color1;
                                         }
 
                                         span.incr:hover{
-                                                background-color: $tertiary-color;
+                                                background-color: $tertiary-background-color;
                                                 color:$font-color1;
                                         }
                         

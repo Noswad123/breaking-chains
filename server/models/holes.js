@@ -5,7 +5,8 @@ var Schema=mongoose.Schema;
 var holeSchema=new Schema({
     holeNum:Number,
     distance:Number,
-    par: Number
+    par: Number,
+    total:Number
 
 })
 

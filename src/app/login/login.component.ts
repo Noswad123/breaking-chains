@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     password: string = "jamal";
     users;//:User[];
     onRegister=false;
+
     user:User={
         firstName: "",
       lastName: "",
@@ -76,8 +77,12 @@ export class LoginComponent implements OnInit {
                         this.router.navigate(["player.page"]);
                     } else {
                         console.log("You were not logged in");
+                        document.getElementById("incorrect").style.display="block";
                     }
 
+                }else{
+                    console.log("You were not logged in");
+                    document.getElementById("incorrect").style.display="block";
                 }
             }
         }

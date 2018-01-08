@@ -1,7 +1,7 @@
 @import '~assets/styles/style';
 
 .container{
-    background-color: $secondary-color;
+    background-color: $secondary-background-color;
     color:$font-color1;
     padding: .5em 0 2em 2em;
     margin-top: 1em;
@@ -19,7 +19,7 @@
             width: 5em;
          }
          button:hover{
-             background-color: $tertiary-color;
+             background-color: $tertiary-background-color;
              border-color: $primary-color;
            
          }

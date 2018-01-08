@@ -1,15 +1,19 @@
 
     <div class="form-wrapper"*ngIf="!onRegister">
+      <h2>Breaking Chains</h2>
     <h2 class="form-title">Login</h2>
 
     <div class="form-row">
       <label>Email </label>
-       <input id="nameText" type="text" value="email" [(ngModel)]="email">
+       <input id="nameText" type="text" [(ngModel)]="email">
     </div>
       <div class="form-row">
-          <label>Password </label> <input id="passText" type="password" value="password" [(ngModel)]="password">
+          <label>Password </label> <input id="passText" type="password" [(ngModel)]="password">
     </div>
-    
+    <div id="incorrect">
+
+        You have entered the incorrect password or username
+      </div>
     <button id="login" (click)="login()">login</button>
     
     <button id="register" (click)="toggleRegister()">Not member? Sign Up</button>

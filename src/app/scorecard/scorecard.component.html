@@ -1,52 +1,64 @@
 <div class="container">
   <div class="header">
     <ul>
-      
-      <li>{{course.name}}</li>
-      <li><button (click)="changeHole(-1)"><--</button><!--<select>
+
+      <li>
+        <h1>{{course.name}}</h1>
+      </li>
+      <li>
+        <h1>
+          <button (click)="changeHole(-1)">
+           <img src="../../assets/img/left-arrow.png" alt="<--"></button>
+              <!--<select>
         <option *ngFor="let hole of holes" value="hole">Hole: {{hole.holeNum}}</option> </select>-->
-        Hole:  {{holes[currentHole].holeNum}}
-      
-      <button (click)="changeHole(1)">--></button>
-    </li>
-      <li>Distance: {{holes[currentHole].distance}} </li>
-      
-    </ul>
-    <ul>
-        <li></li>
-      <li></li>
-      
+              Hole: {{course.holes[currentHole].holeNum}}
+
+              <button (click)="changeHole(1)"><img src="../../assets/img/right-arrow.png" alt="-->"></button>
+        </h1>
+      </li>
+      <li>
+        <h1>Par:{{course.holes[currentHole].par}}</h1>
+      </li>
+      <li>
+        <h1>Distance: {{course.holes[currentHole].distance}}</h1>
+      </li>
+
     </ul>
   </div>
 
 
   <div class="scorecard">
     <div class="divTableBody">
-    <div class="header">
+      <div class="header">
 
-      <div class="divTableCell">Players</div>
-      <div class="divTableCell">Score</div>
+        <div class="divTableCell">Players</div>
+        <div class="divTableCell">Strokes</div>
+        <div class="divTableCell">Score</div>
+      </div>
+      <div class="players" *ngFor="let player of players; let i =index; trackBy: arrayTrackBy">
+
+        <div class="divTableCell">{{this.player.userName}} </div>
+
+        <div class="divTableCell strokes">
+          <!--*ngIf="isSelected(player)"-->
+          <span class="incr" (click)="decrScore(i)">-</span>
+          <span>{{this.player.currentScore[currentHole].par}}</span>
+          <span class="incr" (click)="incrScore(i)">+</span>
+      
+      </div>
+      <div class="divTableCell scores">
+
+          <Span>{{this.updateTotal[i]}}</Span>
+
+        </div>
+      </div>
     </div>
-    <div class="players" *ngFor="let player of players; let i =index; trackBy: arrayTrackBy" (click)="onSelect(player)" [class.selected]="user=== selectedPlayer"> 
- 
-              <div class="divTableCell">{{this.player.userName}} </div>
-
-                <div class="divTableCell scores">
-                  <span *ngIf="isSelected(player)" class="decr" (click)="decrScore(i)">-</span>
-                  <span>{{this.player.currentScore[currentHole].par}}</span>
-              <span *ngIf="isSelected(player)" class="incr" (click)="incrScore(i)">+</span>
-                </div>
-        
-  
   </div>
 </div>
-</div>
-<div class="test-div">
-  {{this.players[0].currentScore[currentHole].par}}
-  {{this.players[1].currentScore[currentHole].par}}
-</div>
-<div class="buttons">
-   <!-- <button (click)="showPlayers()">add player</button>
+  <div class="buttons">
+    <!-- <button (click)="showPlayers()">add player</button>
     <button>Remove player</button>-->
-    <a routerLink="/results" > <button> Finish Round</button></a>
+    <a routerLink="/results">
+      <button> Finish Round</button>
+    </a>
   </div>

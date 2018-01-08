@@ -1,18 +1,61 @@
-<div class='featuredDisc'>
+<div class="featuredDiscs">
 
-  <div>
-    <h2> {{selectedDisc.name}} </h2>
+
+<div class='featuredDisc'>
+  <div class="feature-title">
+     <div >Disc 1</div>
+     <div class="option-one"></div>
   </div>
-  <div> Manufacturer: {{selectedDisc.manufacturer}}</div>
-  <div> Distance: {{selectedDisc.distance}}</div>
-  <div>Turn: {{selectedDisc.turn}}</div>
-  <div> fade: {{selectedDisc.fade}}</div>
+  <div>   
+    <h2> {{selectedDiscs[0].Name}} </h2>
+  </div>
+  <div> Manufacturer: {{selectedDiscs[0].Manufacturer}}</div>
+  <div> Type: {{selectedDiscs[0].Type}}</div>
+  <div> Distance: {{selectedDiscs[0].Distance}}</div>
+  <div>Turn: {{selectedDiscs[0].Turn}}</div>
+  <div> fade: {{selectedDiscs[0].Fade}}</div>
   <div>Flight Chart: coming soon... </div>
 </div>
-
-<div class="discs">
-  <div *ngFor="let disc of discs" [class.selected]="disc === selectedDisc">
-    <button (click)="onSelect(disc)">{{disc.name}}</button>
+<div class='featuredDisc'>
+    <div class="feature-title">
+        <div >Disc 2</div>
+        <div class="option-two"></div>
+     </div>
+    <div>        
+      <h2> {{selectedDiscs[1].Name}} </h2>
+    </div>
+    <div> Manufacturer: {{selectedDiscs[1].Manufacturer}}</div>
+    <div> Type: {{selectedDiscs[1].Type}}</div>
+    <div> Distance: {{selectedDiscs[1].Distance}}</div>
+    <div>Turn: {{selectedDiscs[1].Turn}}</div>
+    <div> fade: {{selectedDiscs[1].Fade}}</div>
+    <div>Flight Chart: coming soon... </div>
   </div>
+  <div class='featuredDisc'>
+      <div class="feature-title">
+          <div >Disc 3</div>
+          <div class="option-three"></div>
+       </div>
+      <div>          
+        <h4> {{selectedDiscs[2].Name}} </h4>
+      </div>
+      <div> Manufacturer: {{selectedDiscs[2].Manufacturer}}</div>
+      <div> Type: {{selectedDiscs[2].Type}}</div>
+      <div> Distance: {{selectedDiscs[2].Distance}}</div>
+      <div>Turn: {{selectedDiscs[2].Turn}}</div>
+      <div> fade: {{selectedDiscs[2].Fade}}</div>
+      <div>Flight Chart: coming soon... </div>
+    </div>
+</div>
+<div class="discs">
+  <div class="disc" *ngFor="let disc of discs" [class.selected]="disc === selectedDisc">
+    
+    <div>{{disc.Name}}</div>
+    <div class="options">
+      <div (click)="onSelect(disc,0)" class="option-one"></div>
+      <div (click)="onSelect(disc,1)" class="option-two"></div>
+      <div  (click)="onSelect(disc,2)" class="option-three"></div>
+    </div>
 
+  </div>
 </div>

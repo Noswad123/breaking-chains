@@ -15,28 +15,31 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #1565c0;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
-$primary-color: #18121e;
-$secondary-color: #233237;
-$tertiary-color: #984b43;
-$accent-color:#eac67a;
 
-// Font Colors
-$base-font-color: $accent-color;
-$action-color: $secondary-color;
-$font-color1: $accent-color;
-$font-color2: $tertiary-color;
+$primary-color: #18121e;
+$navy: #233237;
+$red: #613a43;
+$fresh:#6ac454;
+$tan:#f1a54d;
+$cream:#e9dccd;
+$burgundy:#821b16;
+$charcoal:#36384c;
+
+// used Colors
+$base-font-color: $cream;
+$action-color: $charcoal;
+$font-color1: $cream;
+$font-color2: $burgundy;
+$accent-color:#f1a54d;
 
 // Border
 $base-border-color: $accent-color;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: $primary-color;
-$secondary-background-color: tint($base-border-color, 75%);
+$base-background-color: $cream;
+$secondary-background-color: $navy;
+$tertiary-background-color:$red;
 
 // Focus
 $focus-outline-color: transparentize($action-color, 0.4);

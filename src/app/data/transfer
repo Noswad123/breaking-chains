@@ -28,8 +28,6 @@
             { "name": "Falchion",  "type": "Fairway Driver","distance": "369","manufacturer":"Latitude 64", "turn":"-19%","fade":"38%" },
             { "name": "Xcalibur", "type": "Distance Driver", "distance": "420","manufacturer":"Innova", "turn":"2%","fade":"81%" }
             
-        ],
-        "friends":[],
-        "favCourses": [],
-        "Stats": {}
+        ]
+        
 }

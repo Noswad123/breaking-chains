@@ -29,9 +29,9 @@ textarea {
 }
 
 #{$all-text-inputs} {
-color:$font-color1;
+color:$action-color;
   background-color: $base-background-color;
-  border: $base-border;
+  border:  $action-color;
   border-radius: $base-border-radius;
   box-shadow: $_form-box-shadow;
   box-sizing: border-box;
@@ -45,9 +45,10 @@ color:$font-color1;
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: $base-border;
     box-shadow: $_form-box-shadow-focus;
-    outline: none;
+    outline-color: $accent-color;
+    outline-width: 10px;
   }
 
   &:disabled {

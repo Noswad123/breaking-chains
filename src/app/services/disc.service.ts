@@ -8,13 +8,17 @@ import { Disc } from '../models/disc';
 export class DiscService {
 
   private discsUrl ='api/discs';
+  discs;
   constructor(private http: Http) { }
 
   getDiscs() {
-    var save;
+   
     console.log("retrieving discs from mongo db");
-    return this.http.get(this.discsUrl).map(res =>res.json());
+    return this.http.get(this.discsUrl).map(res =>this.discs=res.json());
      
+  }
+  loadDiscs(){
+    return this.discs;
   }
 
   getDisc(id: number){
