@@ -45,18 +45,17 @@ export class AdminComponent implements OnInit {
     this.getUsers();
 
   }
-  isSelected(user){
+  isSelected(user) {
 
-      if(user.firstName==this.user.firstName)
-      {
+    if (user.firstName == this.user.firstName) {
 
-        return true;
-      }else{
-        return false;
-      }
+      return true;
+    } else {
+      return false;
+    }
   }
-  onSelect(user){
-    this.user=user;
+  onSelect(user) {
+    this.user = user;
     console.log(this.user.firstName);
   }
   isLoggedIn() {
@@ -67,6 +66,11 @@ export class AdminComponent implements OnInit {
   toggle(x) {
     this.switch = x;
 
+  }
+  showMessage(message: string) {
+
+    this.switch = "normal";
+    document.getElementById("admin-prompt").innerHTML = message;
   }
   postDisc(disc) {
 
@@ -129,14 +133,15 @@ export class AdminComponent implements OnInit {
 
   }
   updateUser() {
-   
-   var message;
+
+    var message;
     message = this.returnId(this.user.email);
 
     if (message != "User not found") {
-    this.userService.updateUser(this.user);
+      this.userService.updateUser(this.user);
     }
     console.log(message);
+    this.showMessage(this.user.firstName + " has been updated");
   }
 
   deleteUser() {
@@ -148,13 +153,16 @@ export class AdminComponent implements OnInit {
     if (message != "User not found") {
 
       this.userService.deleteUser(message);
+      this.getUsers();
+      this.showMessage(this.user.firstName + " has been deleted");
     }
 
     console.log(message);
 
   }
+
   returnId(email) {
-console.log(email);
+    console.log(email);
     for (var i = 0; i < this.users.length; i++) {
       console.log(this.users[i].email);
       if (email == this.users[i].email) {
@@ -179,6 +187,7 @@ console.log(email);
   postUser(user) {
     var completion = 0;
     var r = /\b[\w._%+-]+@[\w.-]+\.[A-Za-z]{2,4}\b/;
+    var isValid = true;
     console.log(user);
     if (user.firstName) {
       completion++;
@@ -207,13 +216,28 @@ console.log(email);
       this.user.email = "Please Submit a valid email";
 
     }
+    for (var i = 0; i < this.users.length; i++) {
+      if (this.users[i].email == this.user.email) {
+        isValid = false;
+      }
+    }
 
     console.log(completion);
-    if (completion == 4) {
-      this.userService.postUser(user).subscribe(res => console.log(res));
-      console.log("User added to the database");
-      this.getUsers();
-      console.log(this.users);
+    if (completion == 4 && isValid) {
+      this.userService.postUser(user).subscribe(res => {
+
+
+        this.getUsers();
+        console.log(this.users);
+        this.switch == "normal";
+        console.log("User added to the database");
+        this.showMessage('User has been added successfully');
+      }
+      );
+
+
+
+
     }
   }
 

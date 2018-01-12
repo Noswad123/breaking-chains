@@ -5,13 +5,20 @@
   <div class="buttons">
     <button (click)="toggle('fetch')">View All Users</button>
     <button (click)="toggle('create')">Add User</button>
-
-
     <button (click)="toggle('disc')">Upload discs</button>
     <button (click)="toggle('course')">Upload Course</button>
 
   </div>
+  <div id="admin-prompt">
+
+  </div>
   <div class="switchcase">
+
+    <div *ngIf="switch=='normal'">
+    
+      </div>
+
+
   <div *ngIf="switch=='disc'" class="discPost">
     <form #form="ngForm" (ngSubmit)="postDisc(form.value)">
       <ul>
@@ -95,7 +102,7 @@
           <input id="email" type="text" value="email" name="email" ngModel>
         </li>
         <li>Password
-          <input id="passText" type="text" value="password" name="password" ngModel>
+          <input id="passText" type="password" value="password" name="password" ngModel>
         </li>
       </ul>
       <button type="submit">Submit</button>
