@@ -83,7 +83,7 @@
           <input id="email" type="text" [(ngModel)]="user.email" value="{{user.email}}" name="email">
         </li>
         <li>Password
-          <input id="passText" type="text" [(ngModel)]="user.password" value="{{user.password}}" name="password">
+          <input id="passText" type="password" [(ngModel)]="user.password" value="{{user.password}}" name="password">
         </li>
       </ul>
       <button>Submit</button>
@@ -123,7 +123,7 @@
       </ul>
       <div *ngIf="isSelected(user)" class="userButtons">
       <button (click)="toggle('update') " >edit user</button>
-    <button (click)="deleteUser(getUsers())">delete user</button>
+    <button (click)="deleteUser()">delete user</button>
   </div>
     </div>
 

@@ -152,7 +152,7 @@ router.post('/user',function(req,res){
     newUser.favCourses=[];
     newUser.stats="";
 
-    newUser._id=Math.floor(Math.random()*100);
+    newUser._id=req.body._id;//Math.floor(Math.random()*100);
  
 
     newUser.save(function(err, insertedUser){

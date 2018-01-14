@@ -32,9 +32,9 @@ export class BrowseDiscsComponent implements OnInit {
   
   getDiscs(): void {
    
-    this.discService.getDiscs().subscribe();
+    this.discService.getDiscs().subscribe(()=>this.discs=this.discService.loadDiscs());
    
-    this.discs=this.discService.loadDiscs()
+    
    
   
   }

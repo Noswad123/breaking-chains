@@ -32,27 +32,5 @@ export class DiscService {
    
     return this.http.delete(this.discsUrl).map(() => null);
   }
-/*
-  create(name: string) {
-    return this.http.post(this.discsUrl, JSON.stringify({name}), {headers: this.headers}).map(res => res.json());
-  }
 
-  update(disc: Disc): Promise<Disc> {
-    const url = `${this.discsUrl}/${disc.distance}`;
-    return this.http
-      .put(url, JSON.stringify(disc), {headers: this.headers})
-      .toPromise()
-      .then(() => disc)
-      .catch(this.handleError);
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }
-  saveDiscs(disc:Disc)
-  {
-    
-  }
-*/
 }

@@ -54,10 +54,11 @@ export class LoginComponent implements OnInit {
 
     getUsers() {
 
-        this.userService.getUsers().subscribe();
-        this.users=this.userService.loadUsers()
-        console.log(this.users);
-        //this.userService.saveUsers(this.users);
+        this.userService.getUsers().subscribe(()=>{
+            this.users=this.userService.loadUsers();
+            console.log(this.users);
+        });
+
 
     }
 
@@ -91,7 +92,7 @@ export class LoginComponent implements OnInit {
     isLoggedIn() {
 
         if (this.userService.isloggedin) {
-            this.router.navigate(["login.page"])
+            this.router.navigate(["player.page"])
         } else {
 
             this.userService.isloggedin = false;

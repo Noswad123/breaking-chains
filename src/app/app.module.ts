@@ -30,9 +30,7 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     HttpModule,
     AppRoutingModule
-    //HttpClientModule,
-   // HttpClientInMemoryWebApiModule.forRoot(
-     // InMemoryDataService, { dataEncapsulation: false })
+   
 
   ],
   declarations: [
