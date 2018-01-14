@@ -8,12 +8,13 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --target=production",
+    "heroku-postbuild": "ng build --aot --target=production",
     "start":"node server.js"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.2.4",
+    "@angular/cli": "1.4.7",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
     "@angular/core": "^4.2.4",
@@ -31,7 +32,8 @@
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "typescript": "~2.3.3"
   },
   "devDependencies": {
     "@angular/cli": "1.4.7",
@@ -58,7 +60,7 @@
   },
   "engines": {
     "node":"7.8.0",
-    "npm":"4.2.0"
+    "npm":"5.6.0"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.",
   "main": "app.js",
