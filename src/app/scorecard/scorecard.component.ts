@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Player } from '../models/Player'
+import { Player } from '../models/player'
 import { Course } from '../models/course'
 import { Hole } from '../models/hole'
 import { ScorecardService } from '../services/index'
