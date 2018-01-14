@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'browseDiscs', component: BrowseDiscsComponent },
   { path: 'roundSetup', component: RoundSetupComponent },
   { path: 'results', component: ResultsComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
  // {path: '**', component: PageNotFoundComponent}
