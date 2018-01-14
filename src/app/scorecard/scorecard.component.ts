@@ -90,7 +90,7 @@ showPlayers(){
   console.log(this.players);
 }
 
-arrayTackBy(index, player){
+arrayTrackBy(index, player){
 
     return player.userName;
 }

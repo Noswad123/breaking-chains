@@ -10,7 +10,7 @@ import {PlayerPageComponent} from './player-page/player-page.component';
 import {BrowseDiscsComponent} from './browse-discs/browse-discs.component';
 import {RoundSetupComponent}  from './round-setup/round-setup.component';
 import {ResultsComponent}  from './results/results.component';
-import {RegisterComponent}  from './register/register.component';
+
 import {AdminComponent}  from './admin/admin.component';
 
 

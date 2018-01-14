@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { ScorecardComponent } from './scorecard/scorecard.component';
 import { LoginComponent } from './login/login.component';
 import { MyDiscsComponent } from './my-discs/my-discs.component';
-import { RegisterComponent } from './register/register.component';
+
 import { DiscDetailComponent } from './disc-detail/disc-detail.component';
 import { BrowseDiscsComponent } from './browse-discs/browse-discs.component';
 import { PlayerPageComponent } from './player-page/player-page.component';
