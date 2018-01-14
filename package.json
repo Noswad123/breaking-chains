@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --aot --target=production",
-    "start":"node server.js"
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -59,8 +59,8 @@
     "typescript": "~2.6.2"
   },
   "engines": {
-    "node":"7.8.0",
-    "npm":"5.6.0"
+    "node": "7.8.0",
+    "npm": "5.6.0"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.",
   "main": "app.js",
