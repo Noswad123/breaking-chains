@@ -40,7 +40,6 @@ import { AdminComponent } from './admin/admin.component';
     MyDiscsComponent,
     DiscDetailComponent,
     BrowseDiscsComponent,
-   RegisterComponent,
    PlayerPageComponent,
    RoundSetupComponent,
    ResultsComponent,
