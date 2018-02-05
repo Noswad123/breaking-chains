@@ -1,6 +1,6 @@
 # Breaking Chains Readme
 
-<a src="src/assets/img/Breakin_Chains.png" height="200px">
+![break](src/assets/img/Breakin_Chains.png)
 
 **Version 1.0.0**
 
